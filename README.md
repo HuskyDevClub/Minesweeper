@@ -2,7 +2,7 @@
 
 ### Overview
 
-- Individual solutions can be found in directories titled `GriffinMinesweeper`, `ElijahMinesweeper`, etc.
+- Individual solutions can be found in directories titled `GriffinMinesweeper`, `GroupMember2Minesweeper`, etc.
 
 - InputGenerator can be used to generate a minesweeper_input.txt file for use in the Minesweeper application.
 
