@@ -5,7 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class main {
+public class Main {
     public static void main(String[] args) throws IOException {
         final var _lines = (new BufferedReader(new FileReader(("minesweeper_input.txt")))).lines().toList();
         int index = 0;
