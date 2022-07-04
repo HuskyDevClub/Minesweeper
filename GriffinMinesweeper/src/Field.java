@@ -13,6 +13,6 @@
  * @author Griffin Ryan (glryan@uw.edu)
  * @version 0.0.1
  */
-public class Field {
-
+public final class Field {
+    // solution.
 }
