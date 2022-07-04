@@ -2,7 +2,7 @@
 
 ### Overview
 
-- Individual solutions can be found in directories titled `GriffinMinesweeper`, `GroupMember2Minesweeper`, etc.
+- Individual solutions can be found in directories titled `ryang`, `liny`, and `amiane`.
 
 - InputGenerator can be used to generate a minesweeper_input.txt file for use in the Minesweeper application.
 
@@ -12,7 +12,7 @@
 
 ___
 ### Support
-- Doter Editor is created by [Griffin Ryan][griffinryan-github], [Yudong Lin][yudonglin-github], and [Elijah Amian][elijahamian-github].
+- Minesweeper is created by [Griffin Ryan][griffinryan-github], [Yudong Lin][yudonglin-github], and [Elijah Amian][elijahamian-github].
 
 - Found a problem? Pull requests are welcome.
 
