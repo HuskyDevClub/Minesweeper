@@ -1,8 +1,8 @@
-public final class Field {
+public final class MineField {
     private final char[][] myMineField;
     private final int[][] myHint;
 
-    public Field(final char[][] _mineField) {
+    public MineField(final char[][] _mineField) {
         this.myMineField = _mineField;
         this.myHint = new int[this.getRow() + 2][this.getColumn() + 2];
         for (int y = 0; y < this.getRow(); y++) {
@@ -27,7 +27,7 @@ public final class Field {
     }
 
     public String getHint() {
-        var resultStr = new StringBuilder();
+        final var resultStr = new StringBuilder();
         for (int y = 0; y < this.getRow(); y++) {
             for (int x = 0; x < this.getColumn(); x++) {
                 if (this.myMineField[y][x] == '*') {
