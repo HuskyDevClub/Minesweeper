@@ -1,4 +1,9 @@
-public final class MineField {
+/**
+ * @author Yudong Lin
+ * @Date July 4th, 2022
+ */
+
+final class MineField {
     private final char[][] myMineField;
     private final int[][] myHint;
 
@@ -27,7 +32,7 @@ public final class MineField {
     }
 
     public String getHint() {
-        final var resultStr = new StringBuilder();
+        final StringBuilder resultStr = new StringBuilder();
         for (int y = 0; y < this.getRow(); y++) {
             for (int x = 0; x < this.getColumn(); x++) {
                 if (this.myMineField[y][x] == '*') {
