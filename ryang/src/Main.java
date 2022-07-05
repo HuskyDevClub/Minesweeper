@@ -13,7 +13,7 @@ import java.util.Scanner;
  * file that is given as a second command-line argument.
  *
  * @author Griffin Ryan (glryan@uw.edu)
- * @version 0.0.1
+ * @version 0.0.2
  */
 public class Main {
 
@@ -27,11 +27,7 @@ public class Main {
 	 */
     public static void main(String[] args) {
 		ArrayList<String> input = parseInput();
-		StringBuilder output = new StringBuilder();
-		int totalMineFields = 1;
-
-		// TO-DO: Make the hints and print them out to an
-		//		  output .txt file using System.out.
+		StringBuilder output = generateOutput(input);
 
         System.out.println(output);
     }
@@ -41,8 +37,7 @@ public class Main {
 	 * in an ArrayList of <String> type.
 	 * 
 	 * @return parseInput returns an ArrayList where each
-	 * 	string of the System.in input is parsed into
-	 * 	the list.
+	 * string of the System.in input is parsed into the list.
 	 */
 	private static ArrayList<String> parseInput(){
 		ArrayList<String> input = new ArrayList<>(5800);
@@ -54,4 +49,58 @@ public class Main {
 
 		return input;
 	}
+
+	/**
+	 * generateOutput will return a StringBuilder object with
+	 * the outputted Minesweeper fields w/ the generated hints.
+	 * 
+	 * The main method will then print this StringBuilder
+	 * object using System.out.
+	 * 
+	 * @param theInput as an ArrayList of type <String>.
+	 * @return output as a StringBuilder object.
+	 */
+	private static StringBuilder generateOutput(ArrayList<String> theInput){
+		StringBuilder output = new StringBuilder();
+		int totalMineFields = 0;
+		int rows = 0;
+		int columns = 0;
+		int index = 0;
+		
+		while(index < theInput.size()){
+			String currentLine = theInput.get(index);
+
+			if(currentLine.charAt(0) != '#'){
+				Scanner sc = new Scanner(currentLine);
+				rows = sc.nextInt();
+				columns = sc.nextInt();
+				totalMineFields++;
+
+				if(rows > 0){
+					output.append("Field #");
+					output.append(totalMineFields);
+					output.append(":\n");
+
+					char[][] field = new char[rows][columns];
+					for(int j = 0; j < rows; j++){
+						field[j] = theInput.get(1 + index + j).toCharArray();
+					}
+					output.append(new MineField(field).getHint());
+					index += rows + 1;
+					output.append("\n");
+				} else {
+					break;
+				}
+			} else {
+				index++;
+			}
+		}
+
+		if(output.length() > 0){
+			output.deleteCharAt(output.length() - 1);
+		}
+
+		return output;
+	}
+
 }
