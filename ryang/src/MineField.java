@@ -1,17 +1,16 @@
 /*
- * Field.java
+ * MineField.java
  * Griffin Ryan
  */
-
 /**
- * Field is an Object for Minesweeper to use as a
+ * MineField is an Object for Minesweeper to use as a
  * game board in a session.
  *
- * Instiating a Field object will fill a 2D char array's
+ * Instiating a MineField object will fill a 2D char array's
  * 'safe' spots (. not *) with hint/number indicators.
  *
  * @author Griffin Ryan (glryan@uw.edu)
- * @version 0.0.1
+ * @version 0.0.2
  */
 public final class MineField {
 
@@ -23,7 +22,7 @@ public final class MineField {
      * containing a 2D array for the field with bombs, and
      * a 2D array for the generated hints.
      * 
-     * @param theField
+     * @param theField 2D character array with the Minesweeper board.
      */
     public MineField(final char[][] theField) {
         this.myField = theField;

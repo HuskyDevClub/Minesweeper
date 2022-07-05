@@ -13,7 +13,7 @@ import java.util.Scanner;
  * file that is given as a second command-line argument.
  *
  * @author Griffin Ryan (glryan@uw.edu)
- * @version 0.0.1
+ * @version 0.0.2
  */
 public class Main {
 
@@ -27,16 +27,48 @@ public class Main {
 	 */
     public static void main(String[] args) {
 		ArrayList<String> input = parseInput();
+		StringBuilder output = generateOutput(input);
+
+        System.out.println(output);
+    }
+
+	/**
+	 * parseInput will store System.in lines and return them
+	 * in an ArrayList of <String> type.
+	 * 
+	 * @return parseInput returns an ArrayList where each
+	 * string of the System.in input is parsed into the list.
+	 */
+	private static ArrayList<String> parseInput(){
+		ArrayList<String> input = new ArrayList<>(5800);
+		Scanner scanner = new Scanner(System.in);
+
+		while (scanner.hasNext()) {
+			input.add(scanner.nextLine());
+		}
+
+		return input;
+	}
+
+	/**
+	 * generateOutput will return a StringBuilder object with
+	 * the outputted Minesweeper fields w/ the generated hints.
+	 * 
+	 * The main method will then print this StringBuilder
+	 * object using System.out.
+	 * 
+	 * @param theInput as an ArrayList of type <String>.
+	 * @return output as a StringBuilder object.
+	 */
+	private static StringBuilder generateOutput(ArrayList<String> theInput){
 		StringBuilder output = new StringBuilder();
 		int totalMineFields = 0;
 		int rows = 0;
 		int columns = 0;
 		int index = 0;
-
-		// TO-DO: Make the hints and print them out to an
-		//		  output .txt file using System.out.
-		while(index < input.size()){
-			String currentLine = input.get(index);
+		
+		while(index < theInput.size()){
+			String currentLine = theInput.get(index);
 
 			if(currentLine.charAt(0) != '#'){
 				Scanner sc = new Scanner(currentLine);
@@ -51,7 +83,7 @@ public class Main {
 
 					char[][] field = new char[rows][columns];
 					for(int j = 0; j < rows; j++){
-						field[j] = input.get(1 + index + j).toCharArray();
+						field[j] = theInput.get(1 + index + j).toCharArray();
 					}
 					output.append(new MineField(field).getHint());
 					index += rows + 1;
@@ -62,30 +94,13 @@ public class Main {
 			} else {
 				index++;
 			}
-		} 
+		}
+
 		if(output.length() > 0){
 			output.deleteCharAt(output.length() - 1);
 		}
 
-        System.out.println(output);
-    }
-
-	/**
-	 * parseInput will store System.in lines and return them
-	 * in an ArrayList of <String> type.
-	 * 
-	 * @return parseInput returns an ArrayList where each
-	 * 	string of the System.in input is parsed into
-	 * 	the list.
-	 */
-	private static ArrayList<String> parseInput(){
-		ArrayList<String> input = new ArrayList<>(5800);
-		Scanner scanner = new Scanner(System.in);
-
-		while (scanner.hasNext()) {
-			input.add(scanner.nextLine());
-		}
-
-		return input;
+		return output;
 	}
+
 }
