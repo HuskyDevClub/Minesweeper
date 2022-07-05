@@ -2,6 +2,7 @@
  * MineField.java
  * Griffin Ryan
  */
+
 /**
  * MineField is an Object for Minesweeper to use as a
  * game board in a session.
@@ -21,7 +22,7 @@ public final class MineField {
      * MineField constructor will create a MineField object
      * containing a 2D array for the field with bombs, and
      * a 2D array for the generated hints.
-     * 
+     *
      * @param theField 2D character array with the Minesweeper board.
      */
     public MineField(final char[][] theField) {
@@ -44,7 +45,7 @@ public final class MineField {
 
     /**
      * getRow returns the size of myField's row.
-     * 
+     *
      * @return Length of myField's row.
      */
     public int getRow() {
@@ -53,7 +54,7 @@ public final class MineField {
 
     /**
      * getColumn returns the size of myField's column.
-     * 
+     *
      * @return Length of myField's column.
      */
     public int getColumn() {
@@ -63,7 +64,7 @@ public final class MineField {
     /**
      * getHint generates the hints and places them on the
      * Minesweeper board.
-     * 
+     *
      * @return String result is the generated hints to a string.
      */
     public String getHint() {

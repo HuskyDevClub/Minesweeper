@@ -2,8 +2,11 @@
  * Main.java
  * Griffin Ryan
  */
+
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 /**
  * Main is the exectuable for the Minesweeper
  * project.
@@ -20,28 +23,29 @@ public class Main {
 	/**
 	 * The main method will parse an input .txt file, then
 	 * determine the 'hints' for Minesweeper.
-	 * 
+	 *
 	 * Then, it prints the output to a .txt file.
-	 * 
+	 *
 	 * @param args command-line arguments for the program.
 	 */
     public static void main(String[] args) {
-		ArrayList<String> input = parseInput();
-		StringBuilder output = generateOutput(input);
+		InputStream inputStream = System.in;
+		ArrayList<String> input = parseInput(inputStream);
 
+		StringBuilder output = generateOutput(input);
         System.out.println(output);
     }
 
 	/**
 	 * parseInput will store System.in lines and return them
 	 * in an ArrayList of <String> type.
-	 * 
+	 *
 	 * @return parseInput returns an ArrayList where each
 	 * string of the System.in input is parsed into the list.
 	 */
-	private static ArrayList<String> parseInput(){
+	public static ArrayList<String> parseInput(InputStream theInputStream){
 		ArrayList<String> input = new ArrayList<>(5800);
-		Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(theInputStream);
 
 		while (scanner.hasNext()) {
 			input.add(scanner.nextLine());
@@ -53,20 +57,20 @@ public class Main {
 	/**
 	 * generateOutput will return a StringBuilder object with
 	 * the outputted Minesweeper fields w/ the generated hints.
-	 * 
+	 *
 	 * The main method will then print this StringBuilder
 	 * object using System.out.
-	 * 
+	 *
 	 * @param theInput as an ArrayList of type <String>.
 	 * @return output as a StringBuilder object.
 	 */
-	private static StringBuilder generateOutput(ArrayList<String> theInput){
+	public static StringBuilder generateOutput(ArrayList<String> theInput){
 		StringBuilder output = new StringBuilder();
 		int totalMineFields = 0;
 		int rows = 0;
 		int columns = 0;
 		int index = 0;
-		
+
 		while(index < theInput.size()){
 			String currentLine = theInput.get(index);
 
