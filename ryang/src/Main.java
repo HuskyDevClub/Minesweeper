@@ -31,22 +31,40 @@ public class Main {
 		int totalMineFields = 0;
 		int rows = 0;
 		int columns = 0;
-		
+		int index = 0;
 
 		// TO-DO: Make the hints and print them out to an
 		//		  output .txt file using System.out.
-		for(int i = 0; i < input.size(); i++){
-			if(input.get(i).contains("*") || input.get(i).contains(".")){
-				
+		while(index < input.size()){
+			String currentLine = input.get(index);
 
-			} else {
-				String s = input.get(i);
-				Scanner sc = new Scanner(s);
-
-				totalMineFields++;
+			if(currentLine.charAt(0) != '#'){
+				Scanner sc = new Scanner(currentLine);
 				rows = sc.nextInt();
 				columns = sc.nextInt();
+				totalMineFields++;
+
+				if(rows > 0){
+					output.append("Field #");
+					output.append(totalMineFields);
+					output.append(":\n");
+
+					char[][] field = new char[rows][columns];
+					for(int j = 0; j < rows; j++){
+						field[j] = input.get(1 + index + j).toCharArray();
+					}
+					output.append(new MineField(field).getHint());
+					index += rows + 1;
+					output.append("\n");
+				} else {
+					break;
+				}
+			} else {
+				index++;
 			}
+		} 
+		if(output.length() > 0){
+			output.deleteCharAt(output.length() - 1);
 		}
 
         System.out.println(output);
