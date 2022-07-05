@@ -28,10 +28,26 @@ public class Main {
     public static void main(String[] args) {
 		ArrayList<String> input = parseInput();
 		StringBuilder output = new StringBuilder();
-		int totalMineFields = 1;
+		int totalMineFields = 0;
+		int rows = 0;
+		int columns = 0;
+		
 
 		// TO-DO: Make the hints and print them out to an
 		//		  output .txt file using System.out.
+		for(int i = 0; i < input.size(); i++){
+			if(input.get(i).contains("*") || input.get(i).contains(".")){
+				
+
+			} else {
+				String s = input.get(i);
+				Scanner sc = new Scanner(s);
+
+				totalMineFields++;
+				rows = sc.nextInt();
+				columns = sc.nextInt();
+			}
+		}
 
         System.out.println(output);
     }
