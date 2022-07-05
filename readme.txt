@@ -19,9 +19,9 @@ Team 7:
 
 IDE: Visual Studio Code
 
-Estimated time to solution: 'x' hours
+Estimated time to solution: 10 hours
 
-Conerns with solution: N/A 
+Conerns with solution: No time to implement GUI but works on the CLI!
 
 -------------------
 
