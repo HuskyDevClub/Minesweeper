@@ -6,6 +6,8 @@
 import org.junit.jupiter.api.Test;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -48,6 +50,29 @@ class MainTest {
 	 * @see Main
 	 * */
 	@Test
-	void testGenerateOutput() {
+	void testGenerateOutput() throws FileNotFoundException {
+		File testIn = new File("test_input.txt");
+		File testOut = new File("test_output.txt");
+		InputStream is = new FileInputStream(testIn);
+
+		ArrayList<String> listTest = Main.parseInput(is);
+
+		StringBuilder out = Main.generateOutput(listTest);
+		PrintWriter pw = new PrintWriter(testOut);
+		pw.println(out);
+		pw.flush();
+		pw.close();
+
+		Scanner s = new Scanner(testOut);
+
+		assertAll("Should return lines of output from test_output.txt",
+				() -> assertEquals("Field #1:", s.nextLine(), "Returns 1st line of test_output.txt"),
+				() -> assertEquals("00", s.nextLine(), "Returns 2nd line of test_output.txt"),
+				() -> assertEquals("00", s.nextLine(), "Returns 3rd line of test_output.txt"),
+				() -> assertEquals("", s.nextLine(), "Returns 1st line of test_output.txt"),
+				() -> assertEquals("Field #2:", s.nextLine(), "Returns 4th line of test_output.txt"),
+				() -> assertEquals("1*", s.nextLine(), "Returns 5th line of test_output.txt"),
+				() -> assertEquals("11", s.nextLine(), "Returns 6th line of test_output.txt")
+		);
 	}
 }
