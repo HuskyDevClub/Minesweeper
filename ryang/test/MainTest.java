@@ -2,14 +2,12 @@
  * MainTest.java
  * Griffin Ryan
  */
-
 import org.junit.jupiter.api.Test;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * MainTest is a JUnit test case
  * for the Minesweeper project.

@@ -2,7 +2,6 @@
  * MineField.java
  * Griffin Ryan
  */
-
 /**
  * MineField is an Object for Minesweeper to use as a
  * game board in a session.
