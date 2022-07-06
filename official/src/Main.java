@@ -1,14 +1,12 @@
 /*
  * Main.java
- * Griffin Ryan
+ * Griffin Ryan, Yudong Lin, Elijah Amian
  */
-
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 /**
- * Main is the exectuable for the Minesweeper
+ * Main is the executable for the Minesweeper
  * project.
  *
  * Running this will take an input .txt file as a
@@ -16,7 +14,9 @@ import java.util.Scanner;
  * file that is given as a second command-line argument.
  *
  * @author Griffin Ryan (glryan@uw.edu)
- * @version 0.0.2
+ * @author Yudong Lin (yudong9912@gmail.com)
+ * @author Elijah Amian (elijah25@uw.edu)
+ * @version 0.1.0
  */
 public class Main {
 
@@ -106,5 +106,4 @@ public class Main {
 
 		return output;
 	}
-
 }

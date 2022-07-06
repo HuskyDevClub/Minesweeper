@@ -1,6 +1,6 @@
 /*
  * MainTest.java
- * Griffin Ryan
+ * Griffin Ryan, Yudong Lin, Elijah Amian
  */
 import org.junit.jupiter.api.Test;
 import java.io.*;
@@ -16,7 +16,9 @@ import static org.junit.jupiter.api.Assertions.*;
  * in the Main.java class.
  *
  * @author Griffin Ryan (glryan@uw.edu)
- * @version 0.0.1
+ * @author Yudong Lin (yudong9912@gmail.com)
+ * @author Elijah Amian (elijah25@uw.edu)
+ * @version 0.1.0
  */
 class MainTest {
 

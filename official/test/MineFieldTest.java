@@ -1,6 +1,6 @@
 /*
  * MineFieldTest.java
- * Yudong Lin
+ * Yudong Lin, Griffin Ryan, Elijah Amian
  */
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -12,8 +12,10 @@ import java.util.Arrays;
  * JUnit checks getRow(), getColumn(), and getHint() methods
  * in the MineField.java class.
  *
- * @author Yudong Lin
- * @version 0.0.2
+ * @author Yudong Lin (yudong9912@gmail.com)
+ * @author Griffin Ryan (glryan@uw.edu)
+ * @author Elijah Amian (elijah25@uw.edu)
+ * @version 0.1.0
  */
 class MineFieldTest {
 

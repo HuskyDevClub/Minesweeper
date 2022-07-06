@@ -1,6 +1,6 @@
 /*
  * MineField.java
- * Griffin Ryan
+ * Griffin Ryan, Yudong Lin, Elijah Amian
  */
 /**
  * MineField is an Object for Minesweeper to use as a
@@ -10,7 +10,9 @@
  * 'safe' spots (. not *) with hint/number indicators.
  *
  * @author Griffin Ryan (glryan@uw.edu)
- * @version 0.0.2
+ * @author Yudong Lin (yudong9912@gmail.com)
+ * @author Elijah Amian (elijah25@uw.edu)
+ * @version 0.1.0
  */
 public final class MineField {
 

@@ -1,6 +1,6 @@
 /*
  * MineFieldGenerator.java
- * Yudong Lin
+ * Yudong Lin, Griffin Ryan, Elijah Amian
  */
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,7 +11,10 @@ import java.util.Scanner;
  * MineFieldGenerator generates a minesweeper_input.txt file
  * to be used with the Minesweeper project.
  *
- * @author Yudong Lin
+ * @author Yudong Lin (yudong9912@gmail.com)
+ * @author Griffin Ryan (glryan@uw.edu)
+ * @author Elijah Amian (elijah25@uw.edu)
+ * @version 0.1.0
  */
 public final class MineFieldGenerator {
 
