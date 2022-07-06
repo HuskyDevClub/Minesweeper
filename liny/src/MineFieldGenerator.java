@@ -1,29 +1,40 @@
 /**
  * @author Yudong Lin
- * @Date July 4th, 2022
  */
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public final class MineFieldGenerator {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         final Scanner _scanner = new Scanner(System.in);
-        System.out.println("# PLease enter row:");
-        final int _row = _scanner.nextInt();
-        System.out.println("# PLease enter column:");
-        final int _column = _scanner.nextInt();
-        System.out.println("# PLease enter the percentage of mine:");
-        final double _percentage = _scanner.nextDouble();
-        final var mineField = MineFieldGenerator.generate(_row, _column, _percentage);
-        System.out.printf("%d %d\n", _row, _column);
-        for (final char[] _rowOfMine : mineField) {
-            System.out.println(String.copyValueOf(_rowOfMine));
+        final FileWriter _writer = new FileWriter("custom_minesweeper_input.txt");
+        while (true) {
+            System.out.println("PLease enter row:");
+            final int _row = _scanner.nextInt();
+            System.out.println("PLease enter column:");
+            final int _column = _scanner.nextInt();
+            System.out.println("PLease enter the percentage of mine:");
+            final double _percentage = _scanner.nextDouble();
+            final var mineField = MineFieldGenerator.generate(_row, _column, _percentage);
+            _writer.write(String.format("%d %d\n", _row, _column));
+            for (final char[] _rowOfMine : mineField) {
+                _writer.write(String.copyValueOf(_rowOfMine));
+                _writer.write('\n');
+            }
+            System.out.println("Continue? (0 for yes and everything else for no):");
+            if (_scanner.nextInt() != 0) {
+                break;
+            }
         }
+        _writer.write("0 0\n");
+        _writer.close();
     }
 
-    private static char[][] generate(final int row, final int column, final double percentage) {
+    public static char[][] generate(final int row, final int column, final double percentage) {
         ensureValidInput(row, column, percentage);
         if (percentage == 1.0) {
             return MineFieldGenerator.new2dArray(row, column, '*');
