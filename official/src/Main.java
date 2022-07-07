@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Main is the executable for the Minesweeper
  * project.
- * 
+ *
  * Running this will take an input .txt file as a
  * command-line argument and output to another .txt
  * file that is given as a second command-line argument.
@@ -23,7 +23,7 @@ final public class Main {
     /**
      * The main method will parse an input .txt file, then
      * determine the 'hints' for Minesweeper.
-     * 
+     *
      * Then, it prints the output to a .txt file.
      *
      * @param args command-line arguments for the program.
@@ -57,7 +57,7 @@ final public class Main {
     /**
      * generateOutput will return a StringBuilder object with
      * the outputted Minesweeper fields w/ the generated hints.
-     * 
+     *
      * The main method will then print this StringBuilder
      * object using System.out.
      *
