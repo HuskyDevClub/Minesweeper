@@ -74,30 +74,26 @@ final public class Main {
         while (index < theInput.size()) {
             final String currentLine = theInput.get(index);
 
-            if (currentLine.charAt(0) != '#') {
-                final Scanner sc = new Scanner(currentLine);
-                rows = sc.nextInt();
-                columns = sc.nextInt();
-                totalMineFields++;
+			final Scanner sc = new Scanner(currentLine);
+			rows = sc.nextInt();
+			columns = sc.nextInt();
+			totalMineFields++;
 
-                if (rows > 0) {
-                    output.append("Field #");
-                    output.append(totalMineFields);
-                    output.append(":\n");
+			if (rows > 0) {
+				output.append("Field #");
+				output.append(totalMineFields);
+				output.append(":\n");
 
-                    final char[][] field = new char[rows][columns];
-                    for (int j = 0; j < rows; j++) {
-                        field[j] = theInput.get(1 + index + j).toCharArray();
-                    }
-                    output.append(new MineField(field).getHint());
-                    index += rows + 1;
-                    output.append("\n");
-                } else {
-                    break;
-                }
-            } else {
-                index++;
-            }
+				final char[][] field = new char[rows][columns];
+				for (int j = 0; j < rows; j++) {
+					field[j] = theInput.get(1 + index + j).toCharArray();
+				}
+				output.append(new MineField(field).getHint());
+				index += rows + 1;
+				output.append("\n");
+			} else {
+				break;
+			}
         }
 
         if (output.length() > 0) {
