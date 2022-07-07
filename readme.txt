@@ -9,7 +9,7 @@ Group Assignment 1: Minesweeper
 
 Team 7:
 
-    - Yudong Lin (jdlin@uw.edu)
+    - Yudong Lin (yudong9912@gmail.com)
 
     - Griffin Ryan (glryan@uw.edu)
 
@@ -19,9 +19,8 @@ Team 7:
 
 IDE: Visual Studio Code
 
-Estimated time to solution: 10 hours
+Estimated time to solution: ~15 hours
 
 Conerns with solution: No time to implement GUI but works on the CLI!
 
 -------------------
-
