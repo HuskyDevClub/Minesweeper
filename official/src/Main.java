@@ -74,6 +74,7 @@ final public class Main {
         while (index < theInput.size()) {
             final String currentLine = theInput.get(index);
 
+<<<<<<< HEAD
 			final Scanner sc = new Scanner(currentLine);
 			rows = sc.nextInt();
 			columns = sc.nextInt();
@@ -94,6 +95,29 @@ final public class Main {
 			} else {
 				break;
 			}
+=======
+            final Scanner sc = new Scanner(currentLine);
+            rows = sc.nextInt();
+            columns = sc.nextInt();
+            totalMineFields++;
+
+            if (rows > 0) {
+                output.append("Field #");
+                output.append(totalMineFields);
+                output.append(":\n");
+
+                final char[][] field = new char[rows][columns];
+                for (int j = 0; j < rows; j++) {
+                    field[j] = theInput.get(1 + index + j).toCharArray();
+                }
+                output.append(new MineField(field).getHint());
+                index += rows + 1;
+                output.append("\n");
+            } else {
+                break;
+            }
+
+>>>>>>> main
         }
 
         if (output.length() > 0) {
