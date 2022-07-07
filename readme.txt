@@ -17,9 +17,9 @@ Team 7:
 
 -------------------
 
-IDE: Visual Studio Code
+IDE: IntelliJ Idea
 
-Estimated time to solution: ~15 hours
+Estimated time to solution: ~10-20 hours
 
 Conerns with solution: No time to implement GUI but works on the CLI!
 
