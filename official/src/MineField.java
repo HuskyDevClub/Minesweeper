@@ -5,7 +5,7 @@
 /**
  * MineField is an Object for Minesweeper to use as a
  * game board in a session.
- *
+ * 
  * Instiating a MineField object will fill a 2D char array's
  * 'safe' spots (. not *) with hint/number indicators.
  *
@@ -69,7 +69,7 @@ public final class MineField {
      * @return String result is the generated hints to a string.
      */
     public String getHint() {
-        StringBuilder result = new StringBuilder();
+        final StringBuilder result = new StringBuilder();
 
         for (int y = 0; y < this.getRow(); y++) {
             for (int x = 0; x < this.getColumn(); x++) {
